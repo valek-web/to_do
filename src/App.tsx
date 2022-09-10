@@ -23,7 +23,6 @@ function App() {
                 if (id === todo.id) {
                     todo.comlited = !todo.comlited
                 }
-                debugger
                 return todo
             })
         )
@@ -38,7 +37,15 @@ function App() {
             <Navbar />
             <div className='container'>
                 <Form addTodo={addTodo} />
-                <TodoList todoList={todo} checkedHandler={checkedHandler} removeTodo={removeTodo} />
+                {todo.length === 0 ? (
+                    'Нет дел!'
+                ) : (
+                    <TodoList
+                        todoList={todo}
+                        checkedHandler={checkedHandler}
+                        removeTodo={removeTodo}
+                    />
+                )}
             </div>
         </main>
     )

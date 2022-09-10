@@ -1,16 +1,24 @@
-import React from 'react'
+import * as React from 'react'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import IconButton from '@mui/material/IconButton'
+// import MenuIcon from '@mui/icons-material/Menu'
 
-export const Navbar: React.FC = () => {
+export const Navbar = () => {
     return (
-        <nav className='grey darken-4'>
-            <div className='container'>
-                <div className='nav-wrapper'>
-                    <a href='#' className='brand-logo'>
+        <Box sx={{flexGrow: 1}}>
+            <AppBar position='static'>
+                <Toolbar variant='dense'>
+                    <IconButton edge='start' color='inherit' aria-label='menu' sx={{mr: 2}}>
+                        &#9811;
+                    </IconButton>
+                    <Typography variant='h6' color='inherit' component='div'>
                         To do
-                    </a>
-                    <ul id='nav-mobile' className='right hide-on-med-and-down'></ul>
-                </div>
-            </div>
-        </nav>
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+        </Box>
     )
 }

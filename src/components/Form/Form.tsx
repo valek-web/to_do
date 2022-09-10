@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField'
 
 type TodoProps = {
     addTodo(title: string): void
@@ -23,17 +25,22 @@ export const Form: React.FC<TodoProps> = ({addTodo}) => {
     }
 
     return (
-        <div className='input-field mt2'>
-            <input
-                type='text'
+        <Box
+            component='div'
+            sx={{
+                '& > :not(style)': {m: 1, width: '100%'},
+                width: '100%',
+            }}
+        >
+            <TextField
                 id='title'
+                label='Задача'
+                variant='standard'
                 onChange={changeHandler}
                 value={title}
                 onKeyDown={keyPress}
+                required
             />
-            <label htmlFor='title' className='active '>
-                Задача
-            </label>
-        </div>
+        </Box>
     )
 }
