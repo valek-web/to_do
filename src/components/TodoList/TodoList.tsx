@@ -14,7 +14,7 @@ export const TodoList: React.FC<TodoListProps> = (props) => {
         <ul>
             {props.todoList.map((todo) => {
                 let completed = {
-                    textDecoration: todo.comlited ? 'line-through' : 'comlited',
+                    textDecoration: todo.comlited ? 'line-through' : 'none',
                 }
                 return (
                     <Box
